@@ -1,0 +1,43 @@
+/* start Global rules */
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    --main-container-padding:15px;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Work Sans', sans-serif;
+}
+ul{
+    list-style: none;
+}
+.container {
+    padding-top: var(--main-container-padding);
+    padding-bottom: var(--main-container-padding);
+    margin-left: auto;
+    margin-right: auto;
+}
+/* small screens */
+@media (min-width: 768px) {
+    .container{
+        width: 750px;
+    }
+}
+/* medium screens  */
+@media (min-width: 992px) {
+    .container{
+        width: 970px;
+    }
+}
+/* large screens */
+@media (min-width: 1200px) {
+    .container{
+        width: 1170px;
+    }
+}
+/* end Global rules */
