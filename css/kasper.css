@@ -2,10 +2,61 @@
 :root{
     --main-container-padding:15px;
     --main-color:#19c8fa;
+    --sub-text-color:#8a8888;
     --main-duaration:0.5s;
     --transiparent-color:#1c7d99ba;
 }
 /* end variabels */
+
+/* start components */
+.special-header{
+    text-align: center;
+    padding:100px 10px;
+}
+.special-header h2{
+    font-size: 40px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    position: relative;
+}
+.special-header h2::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20px;
+    width: 128px;
+    height: 2px;
+    background-color: #777;
+}
+.special-header h2::before{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #777;
+    background-color: white;
+    left: 50%;
+    bottom: -20px;
+    transform: translate(-50%, 10px);
+    z-index: 1;
+}
+.special-header p{
+    color: var(--sub-text-color);
+    font-size: 18px;
+    display: inline-block;
+    width: 600px;
+    line-height: 1.7;
+}
+@media (max-width: 767px) {
+    .special-header p{
+        width: 100%;
+    }
+}
+/* end components */
+
 /* start Global rules */
 *{
     box-sizing: border-box;
@@ -20,7 +71,6 @@ html{
 }
 body{
     font-family: 'Work Sans', sans-serif;
-    background-color: black;
 }
 ul{
     list-style: none;
@@ -236,4 +286,111 @@ header .container .search{
 }
 /* end landing style */
 
+/* start services */
+.services .services-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(45% ,1fr) );
+    gap:30px;
+    margin-bottom: 50px;
+
+}
+@media (max-width: 992px) {
+    .services .services-content{
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+        gap:0px;
+    }
+}
+.services .services-content .serv{
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.services .services-content .serv i{
+    display: block;
+    width: 100px ;
+}
+@media (max-width: 767px) {
+    .services .services-content .serv{
+        text-align: center;
+        flex-direction: column;
+    }
+    .services .services-content .serv i{
+        margin: 30px auto;
+    }
+}
+.services .services-content .serv .text{
+    flex:1;
+}
+.services .services-content .serv .text h3{
+    color: var(--main-color);
+    font-size: 20px;
+    margin-bottom: 30px;
+
+}
+.services .services-content .serv .text p{
+    color: #777;
+    line-height: 1.7;
+}
+/* end services */
+
+/* start design */
+.design{
+    width: 100%;
+    height: 500px;
+    background-image: url(../images/design.jpg);
+    background-size: cover;
+}
+.design .overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+.design .overlay .text-overlay{
+    color:#dbdbdb;
+    background-color: var(--transiparent-color);
+    width: 50%;
+    padding: 50px;
+    display: flex;
+    justify-content: flex-start;
+}
+.design .text-overlay .text h3{
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+.design .text-overlay .text p{
+    text-transform: capitalize;
+    font-size: 22px;
+    line-height: 1.7;
+    padding: 10px 0px;
+}
+.design .text-overlay .text p span{
+    display: inline-block;
+    margin-right: 20px;
+}
+.design .overlay .image{    
+    flex: 1;
+    text-align: center;
+}
+.design .overlay .text-overlay,
+.design .overlay .image{
+    flex:1;
+}
+.design .overlay img{
+    margin-bottom: -200px;
+}
+@media (max-width: 767px) {
+    .design .overlay .image{
+        display: none;
+    }
+    .design .overlay .text-overlay{
+        width: 100%; 
+    }
+}
+/* end design */
 
